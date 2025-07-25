@@ -8,15 +8,9 @@ pipeline {
             }
         }
 
-        stage('Install Dependencies') {
-            steps {
-                sh 'python3 -m pip install --upgrade pip'
-            }
-        }
-
         stage('Run Python Script') {
             steps {
-                sh 'python3 CICD_Pipeline1.py'
+                sh 'python3 CICD_Pipeline.py'
             }
         }
     }
@@ -26,7 +20,7 @@ pipeline {
             echo 'CI/CD Pipeline ran successfully!'
         }
         failure {
-            echo 'CI/CD Pipeline failed.'
+            echo ' CI/CD Pipeline failed.'
         }
     }
 }
