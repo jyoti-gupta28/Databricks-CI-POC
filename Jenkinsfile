@@ -10,13 +10,13 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh 'python -m pip install --upgrade pip'
+                sh 'python3 -m pip install --upgrade pip'
             }
         }
 
         stage('Run Python Script') {
             steps {
-                sh 'python CICD_Pipeline1.py'
+                sh 'python3 CICD_Pipeline1.py'
             }
         }
     }
