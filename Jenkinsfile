@@ -1,26 +1,32 @@
 pipeline {
     agent any
 
+    environment {
+        GIT_CREDENTIALS = credentials('Github-token2')
+    }
+
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/jyoti-gupta28/Databricks-CI-POC.git'
+                git branch: 'main',
+                    credentialsId: "${GIT_CREDENTIALS}",
+                    url: 'https://github.com/jyoti-gupta28/Databricks-CI-POC.git'
             }
         }
 
         stage('Run Python Script') {
             steps {
-                sh 'python3 CICD_Pipeline.py'
+                bat 'python CICD_Pipeline1.py'
             }
         }
     }
 
     post {
-        success {
-            echo 'CI/CD Pipeline ran successfully!'
-        }
         failure {
-            echo ' CI/CD Pipeline failed.'
+            echo 'CI/CD Pipeline failed.'
+        }
+        success {
+            echo 'CI/CD Pipeline succeeded!'
         }
     }
 }
