@@ -16,7 +16,7 @@ pipeline {
 
         stage('Run Python Script') {
             steps {
-                sh 'python3 CICD_Pipeline.py'
+                sh 'python3 CICD_Pipeline1.py'
             }
         }
     }
