@@ -19,6 +19,11 @@ pipeline {
                 bat 'python CICD_Pipeline1.py'
             }
         }
+        stage('Run Python Script'){
+            steps{
+                bat 'python CICD_Pipeline2.py'
+            }
+        }
     }
 
     post {
