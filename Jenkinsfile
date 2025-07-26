@@ -14,12 +14,12 @@ pipeline {
             }
         }
 
-        stage('Run Python Script') {
+        stage('Run Python Script 1') {
             steps {
                 bat 'python CICD_Pipeline1.py'
             }
         }
-        stage('Run Python Script'){
+        stage('Run Python Script 2'){
             steps{
                 bat 'python CICD_Pipeline2.py'
             }
