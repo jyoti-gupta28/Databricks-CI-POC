@@ -13,9 +13,9 @@ pipeline {
                     url: 'https://github.com/jyoti-gupta28/Databricks-CI-POC.git'
             }
         }
-        stage('Run Python Script 2'){
+        stage('Run Python Script'){
             steps{
-                bat 'python CICD_Pipeline2.py'
+                bat 'python CICD_Pipeline.py'
             }
         }
     }
