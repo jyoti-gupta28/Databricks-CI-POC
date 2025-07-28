@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Run python script'){
             steps{
-                bat 'DBN.py'
+                bat 'python DBN.py'
             }
         }
     }
