@@ -18,6 +18,11 @@ pipeline {
                 bat 'python CICD_Pipeline.py'
             }
         }
+        stage('Run python script'){
+            steps{
+                bat 'DBN.py'
+            }
+        }
     }
 
     post {
