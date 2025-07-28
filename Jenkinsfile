@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'dev',
+                git branch: 'feature/login',
                     credentialsId: "${GIT_CREDENTIALS}",
                     url: 'https://github.com/jyoti-gupta28/Databricks-CI-POC.git'
             }
@@ -18,7 +18,7 @@ pipeline {
                 bat 'python CICD_Pipeline.py'
             }
         }
-        stage('Run python script'){
+        stage('Run Python script'){
             steps{
                 bat 'python DBN.py'
             }
